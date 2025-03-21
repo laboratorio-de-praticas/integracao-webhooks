@@ -20,7 +20,7 @@ const listenNewVotes = async () => {
     await connectDB()
 
     await client.query('LISTEN new_voterp')
-    await client.query('LISTEN new_votopr')
+    await client.query('LISTEN new_votepr')
 
     //evento notificação
     client.on('notification', async (msg) => {
@@ -31,7 +31,7 @@ const listenNewVotes = async () => {
         //verificação do canal pelo qual o voto foi recebido
         if (msg.channel === 'new_voterp') {
           url = url_representante
-        } else if (msg.channel === 'new_votopr') {
+        } else if (msg.channel === 'new_votepr') {
           url = url_projeto
         } else {
           console.log('Canal desconhecido:', msg.channel)

@@ -1,10 +1,3 @@
-CREATE TABLE votacao_projetos(
-id_voto SERIAL PRIMARY KEY,
-fk_id_projeto INTEGER NOT NULL,
-fk_id_votante INTEGER NOT NULL,
-date_voto TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
 create or replace function novo_voto() returns trigger as $$
 declare 
 	registros_json JSON;
