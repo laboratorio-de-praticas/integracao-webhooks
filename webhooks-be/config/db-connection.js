@@ -2,11 +2,11 @@ const { Client } = require('pg')
 
 // Configuração do cliente para conexão com o banco
 const client = new Client({
-  user: '',
-  host: '',
-  database: '',
-  password: '',
-  port: '' //só está com aspas para evitar erro
+  user: 'postgres',
+  host: 'localhost',
+  database: 'teste',
+  password: 'admin',
+  port: '5432' //só está com aspas para evitar erro
 })
 
 // Conectar ao banco de dados

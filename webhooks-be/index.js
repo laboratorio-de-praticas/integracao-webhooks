@@ -1,8 +1,8 @@
 const { client, connectDB } = require('./db-connection')
 const axios = require('axios')
 
-const url_representante = ''
-const url_projeto = ''
+const url_representante = 'http://localhost:4000/votacao_representantes'
+const url_projeto = 'http://localhost:4000/votacao_projetos'
 
 // Envia os dados para o Webhook correto
 const sendWebhook = async (url, data) => {
@@ -19,8 +19,7 @@ const listenNewVotes = async () => {
   try {
     await connectDB()
 
-    await client.query('LISTEN new_voterp')
-    await client.query('LISTEN new_votepr')
+    await client.query('LISTEN new_vote')
 
     //evento notificação
     client.on('notification', async (msg) => {
@@ -29,12 +28,12 @@ const listenNewVotes = async () => {
         let url
 
         //verificação do canal pelo qual o voto foi recebido
-        if (msg.channel === 'new_voterp') {
+        if (payload.tipoevento == "Interno") {
           url = url_representante
-        } else if (msg.channel === 'new_votepr') {
+        } else if (payload.tipoevento == "Externo") {
           url = url_projeto
         } else {
-          console.log('Canal desconhecido:', msg.channel)
+          console.log('Evento desconhecido:', payload.tipo_evento)
           return
         }
         await sendWebhook(url, payload)
