@@ -52,3 +52,4 @@ const listenNewVotes = async () => {
 };
 
 listenNewVotes();
+module.exports = { sendWebhook, listenNewVotes };
