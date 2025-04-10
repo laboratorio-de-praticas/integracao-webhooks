@@ -12,8 +12,10 @@ CREATE TABLE "Eventos" (
 );
 
 INSERT INTO "Eventos"(tipo_evento,nome_evento,descricao_evento,data_inicio,data_fim) VALUES
-('Interno','Votação Representantes 2025-2','A votação de representantes do 2º semestre de 2025', '2025-03-31 18:30:00', '2025-04-10 23:00:00'),
-('Externo','Hubtech 2025-2','A votação dos projetos da hubtech de 2025', '2025-04-15 18:30:00', '2025-04-15 23:00:00');
+('Interno','Votação Representantes 2025-1','A votação de representantes do 2º semestre de 2025', '2025-09-30 18:30:00', '2025-10-10 23:00:00'),
+('Externo','Hubtech 2025-1','A votação dos projetos da hubtech de 2025', '2025-05-15 18:30:00', '2025-05-15 23:00:00'),
+('Interno','Votação Representantes 2025-2','A votação de representantes do 2º semestre de 2025', '2025-03-31 18:30:00', '2025-04-09 23:00:00'),
+('Externo','Hubtech 2025-1','A votação dos projetos da hubtech de 2025', '2025-04-15 18:30:00', '2025-04-15 23:00:00');
 
 select * from "Eventos";
 
@@ -32,7 +34,7 @@ CREATE TABLE "VotosExternos" (
   fk_id_projeto INT,
   fk_id_visitante INT,
   data_criacao TIMESTAMP DEFAULT now(),
-  UNIQUE(fk_id_visitante, fk_id_projeto)
+  UNIQUE(fk_id_evento, fk_id_visitante, fk_id_projeto)
 );
 
 CREATE OR REPLACE FUNCTION notificar_novo_votoE() RETURNS trigger AS $$
@@ -43,7 +45,8 @@ DECLARE
 BEGIN
   SELECT COUNT(*) INTO qtd_votos
   FROM "VotosExternos"
-  WHERE fk_id_projeto = NEW.fk_id_projeto;
+  WHERE fk_id_projeto = NEW.fk_id_projeto
+  AND fk_id_evento = NEW.fk_id_evento;
   Select "Eventos".tipo_evento INTO STRICT tipoEvent
   from "Eventos" 
   where id_evento = new.fk_id_evento;
@@ -73,7 +76,8 @@ DECLARE
 BEGIN
   SELECT COUNT(*) INTO qtd_votos
   FROM "VotosInternos"
-  WHERE fk_id_representante = NEW.fk_id_representante;
+  WHERE fk_id_representante = NEW.fk_id_representante
+  AND fk_id_evento = NEW.fk_id_evento;
   Select "Eventos".tipo_evento INTO STRICT tipoEvent
   from "Eventos" 
   where id_evento = new.fk_id_evento;
@@ -96,9 +100,11 @@ FOR EACH ROW
 EXECUTE FUNCTION notificar_novo_votoI();
 
 INSERT INTO "VotosInternos" (fk_id_evento, fk_id_aluno, fk_id_representante)
-values (1, 1, 9);
+values (3, 3, 9);
 
-delete from "VotosInternos" where id_voto = 1;
+delete from "VotosInternos";
 
-INSERT INTO "VotosExternos" (id_voto, fk_id_evento, fk_id_visitante, fk_id_projeto)
-values (2, 2, 2, 10);
+INSERT INTO "VotosExternos" (fk_id_evento, fk_id_visitante, fk_id_projeto)
+values (4, 3, 10);
+
+delete from "VotosExternos";

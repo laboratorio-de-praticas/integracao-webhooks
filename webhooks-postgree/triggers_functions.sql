@@ -1,4 +1,3 @@
-CREATE TYPE "EventoStatus" AS ENUM ('Ativo', 'Em_Preparo', 'Em_Contagem', 'Finalizado');
 CREATE TYPE "EventoTipos" AS ENUM ('Externo', 'Interno');
 
 CREATE TABLE "Eventos" (
@@ -6,8 +5,6 @@ CREATE TABLE "Eventos" (
   tipo_evento "EventoTipos" NOT NULL,
   nome_evento TEXT,
   descricao_evento TEXT,
-  status_evento "EventoStatus" NOT NULL,
-  curso_semestre TEXT,
   data_inicio TIMESTAMP,
   data_fim TIMESTAMP,
   data_criacao TIMESTAMP DEFAULT now(),
@@ -29,7 +26,7 @@ CREATE TABLE "VotosExternos" (
   fk_id_projeto INT,
   fk_id_visitante INT,
   data_criacao TIMESTAMP DEFAULT now(),
-  UNIQUE(fk_id_visitante, fk_id_projeto)
+  UNIQUE(fk_id_evento, fk_id_visitante, fk_id_projeto)
 );
 
 CREATE OR REPLACE FUNCTION notificar_novo_votoE() RETURNS trigger AS $$
@@ -40,7 +37,8 @@ DECLARE
 BEGIN
   SELECT COUNT(*) INTO qtd_votos
   FROM "VotosExternos"
-  WHERE fk_id_projeto = NEW.fk_id_projeto;
+  WHERE fk_id_projeto = NEW.fk_id_projeto
+  AND fk_id_evento = NEW.fk_id_evento;
   Select "Eventos".tipo_evento INTO STRICT tipoEvent
   from "Eventos" 
   where id_evento = new.fk_id_evento;
@@ -70,7 +68,8 @@ DECLARE
 BEGIN
   SELECT COUNT(*) INTO qtd_votos
   FROM "VotosInternos"
-  WHERE fk_id_representante = NEW.fk_id_representante;
+  WHERE fk_id_representante = NEW.fk_id_representante
+  AND fk_id_evento = NEW.fk_id_evento;
   Select "Eventos".tipo_evento INTO STRICT tipoEvent
   from "Eventos" 
   where id_evento = new.fk_id_evento;
