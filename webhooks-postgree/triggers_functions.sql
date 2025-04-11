@@ -45,6 +45,7 @@ BEGIN
 
   registro_json := json_build_object(
     'id_voto', NEW.id_voto,
+	'id_evento', NEW.fk_id_evento,
     'id_projeto', NEW.fk_id_projeto,
 	'tipoevento', tipoEvent,
     'qtd_votos', qtd_votos
@@ -76,6 +77,7 @@ BEGIN
 
   registro_json := json_build_object(
     'id_voto', NEW.id_voto,
+	'id_evento', NEW.fk_id_evento,
     'id_representante', NEW.fk_id_representante,
 	'tipoevento', tipoEvent,
     'qtd_votos', qtd_votos

@@ -53,6 +53,7 @@ BEGIN
 
   registro_json := json_build_object(
     'id_voto', NEW.id_voto,
+	'id_evento', NEW.fk_id_evento,
     'id_projeto', NEW.fk_id_projeto,
 	'tipoevento', tipoEvent,
     'qtd_votos', qtd_votos
@@ -84,6 +85,7 @@ BEGIN
 
   registro_json := json_build_object(
     'id_voto', NEW.id_voto,
+	'id_evento', NEW.fk_id_evento,
     'id_representante', NEW.fk_id_representante,
 	'tipoevento', tipoEvent,
     'qtd_votos', qtd_votos
@@ -100,7 +102,7 @@ FOR EACH ROW
 EXECUTE FUNCTION notificar_novo_votoI();
 
 INSERT INTO "VotosInternos" (fk_id_evento, fk_id_aluno, fk_id_representante)
-values (3, 3, 9);
+values (1, 4, 9);
 
 delete from "VotosInternos";
 
