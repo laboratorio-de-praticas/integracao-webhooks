@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-export default function Header() {
+export const Header = () => {
   return (
     <header>
       <div className="w-full relative z-0 bg-white flex justify-between items-center border-gray-300 border-b-1">

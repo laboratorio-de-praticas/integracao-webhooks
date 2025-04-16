@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Logo_menu from "../../../../public/images/logo_menu.svg"
 
-export default function NavBar() {
+export const NavBar = () => {
   return (
       <div className="bg-red-700 text-white h-23 px-6 mt-5 flex justify-between items-center">
         <div className="flex items-center space-x-4">

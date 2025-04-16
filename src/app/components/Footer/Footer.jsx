@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Logo_sp from "../../../../public/images/logo_sp.svg"
 
-export default function Footer() {
+export const Footer = () => {
   return (
     <footer className="bg-black border-gray-200 dark:bg-black w-full">
       <div className="container mx-auto">

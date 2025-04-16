@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import Header from "../app/components/Header/Header";
-import Footer from "../app/components/Footer/Footer";
-import NavBar from "../app/components/NavBar/NavBar";
+import { Header } from "../app/components/Header/Header";
+import { Footer } from "../app/components/Footer/Footer";
+import { NavBar } from "../app/components/NavBar/NavBar";
 import { ApiCard } from "./components/ApiCard/ApiCard";
 import mockData from "./mocks/ApiCards.json";
 
