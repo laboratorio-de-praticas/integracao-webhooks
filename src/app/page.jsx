@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../app/components/Header/Header";
 import Footer from "../app/components/Footer/Footer";
 import NavBar from "../app/components/NavBar/NavBar";
+import { ApiCard } from "./components/ApiCard/ApiCard";
 
 
 export default function Home() {
@@ -16,13 +17,24 @@ export default function Home() {
             <hr></hr>
             <p className="mt-10">Selecione a API:</p>
           </div>
-          <div className="w-4/5 text-black h-25/50 border-gray-400 border-2 rounded-md">
-            <div className="flex gap-[15%] px-8 py-3">
-              <p>Nome</p>
-              <p>Descrição</p>
-              <p>Caminho</p>
-            </div>
-          </div>
+          <table className="table-auto w-4/5 border-collapse border border-gray-400 rounded-md">
+            <thead>
+              <tr className="bg-gray-200 text-black">
+                <th className="px-4 py-2 text-left">Nome</th>
+                <th className="px-4 py-2 text-left">Descrição</th>
+                <th className="px-4 py-2 text-left">Caminho</th>
+                <th className="px-4 py-2 text-left"></th>
+              </tr>
+            </thead>
+            <tbody>
+            <ApiCard
+              nome="API1"
+              desc="Login dos Usuários"
+              caminho="api/usuarios/login"
+            />
+            </tbody>
+          </table>
+
         </section>
       </main>
       <Footer />
