@@ -14,7 +14,7 @@ export default function Home() {
       <Header />
       <NavBar />
       <main className="flex-1 flex justify-center bg-white">
-        <section className="flex flex-col items-center w-full max-w-4/5 pb-20">
+        <section className="flex flex-col items-center w-full max-w-4/5 pb-30">
           <div className="text-black h-1/5 mt-20 w-full">
             <h1 className="text-[#1A6C7C] text-4xl font-medium mb-3">Seleção de APIs</h1>
             <hr className="border-gray-400"/>
