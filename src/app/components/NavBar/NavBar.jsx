@@ -4,7 +4,7 @@ import Logo_menu from "../../../../public/images/logo_menu.svg"
 
 export default function NavBar() {
   return (
-      <div className="bg-red-700 text-white py-4 px-6 flex justify-between items-center">
+      <div className="bg-red-700 text-white h-23 px-6 mt-5 flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <Image
             src={Logo_menu}
@@ -14,8 +14,7 @@ export default function NavBar() {
             className="object-contain"
           />
         </div>
-        <button className="bg-gray-300 text-black p-3 rounded-full">
-          Perfil
+        <button className="bg-white text-black p-7 mr-30 rounded-full">
         </button>
       </div>
   );
