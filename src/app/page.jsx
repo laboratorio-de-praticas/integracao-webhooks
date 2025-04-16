@@ -37,7 +37,8 @@ export default function Home() {
                     nome={api.nome}
                     desc={api.desc}
                     caminho={api.caminho}
-                    bgColor= {index % 2 === 0 ? 'bg-gray-100' : 'bg-white'}
+                    bgColor={index % 2 === 0 ? 'bg-gray-100' : 'bg-white'}
+                    fontColor={index % 2 === 0 ? 'text-gray-600' : 'text-gray-500'}
                   />
                 ))}
               </tbody>
