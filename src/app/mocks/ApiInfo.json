@@ -1,0 +1,17 @@
+{
+    "data":[
+        {
+            "id": 1,
+            "nome": "API1",
+            "desc": "Login dos Usuários",
+            "caminho": "api/usuarios/login",
+            "endpoits": [
+                {
+                    "method": "GET",
+                    "path": "login/findmyuser",
+                    "desc": "Localiza o usuário"
+                }
+            ]
+        }
+    ]
+}

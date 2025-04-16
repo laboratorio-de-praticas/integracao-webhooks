@@ -34,6 +34,7 @@ export default function Home() {
                 {Apis.map((api, index) => (
                   <ApiCard
                     key={api.id}
+                    id={api.id}
                     nome={api.nome}
                     desc={api.desc}
                     caminho={api.caminho}
