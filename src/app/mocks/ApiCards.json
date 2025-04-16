@@ -1,0 +1,40 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "nome": "API1",
+            "desc": "Login dos Usuários",
+            "caminho": "api/usuarios/login"
+        },
+        {
+            "id": 2,
+            "nome": "API AUTH",
+            "desc": "Autenticação",
+            "caminho": "api/usuarios/authentication"
+        },
+        {
+            "id": 3,
+            "nome": "API CAD",
+            "desc": "Cadastro de Usuário",
+            "caminho": "api/usuarios/registration"
+        },
+        {
+            "id": 4,
+            "nome": "API X",
+            "desc": "Função X",
+            "caminho": "api/usuarios/xfunction"
+        },
+        {
+            "id": 5,
+            "nome": "API Y",
+            "desc": "Função Y",
+            "caminho": "api/usuarios/yfunction"
+        },
+        {
+            "id": 6,
+            "nome": "API Z",
+            "desc": "Função Z",
+            "caminho": "api/usuarios/zfunction"
+        }
+    ]
+}
