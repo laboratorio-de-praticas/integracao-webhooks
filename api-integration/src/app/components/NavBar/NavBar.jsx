@@ -4,15 +4,19 @@ import Logo_menu from "../../../../public/images/logo_menu.svg"
 
 export default function NavBar() {
   return (
-    <nav className="menu-container bg-red-700 border-gray-200 dark:bg-red-700 h-24">
-      <div className="container flex items-center px-1 h-[100%]">
-        <div className="menu-logo-4k relative w-[370px] ml-[4rem] flex align-center">
-          <Image 
-            src={Logo_menu} 
-            alt="logo" 
+      <div className="bg-red-700 text-white py-4 px-6 flex justify-between items-center">
+        <div className="flex items-center space-x-4">
+          <Image
+            src={Logo_menu}
+            alt="CPS"
+            width={320}
+            height={40}
+            className="object-contain"
           />
         </div>
+        <button className="bg-gray-300 text-black p-3 rounded-full">
+          Perfil
+        </button>
       </div>
-    </nav>
   );
 }
