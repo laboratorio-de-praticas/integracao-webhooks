@@ -24,8 +24,6 @@ export default function ApiDetails({ params }) {
 
     return (
         <div className="min-h-screen flex flex-col font-verdana">
-            <Header />
-            <NavBar />
             <main className="h-auto min-h-[110vh] flex justify-center bg-white pb-30">
                 <section className="flex flex-col items-center w-full max-w-4/5">
                     <div className="text-black h-40 mt-20 w-full">
@@ -77,7 +75,6 @@ export default function ApiDetails({ params }) {
                     </div>
                 </section>
             </main>
-            <Footer />
         </div>
     );
 }
