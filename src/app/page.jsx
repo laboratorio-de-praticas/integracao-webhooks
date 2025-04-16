@@ -10,17 +10,17 @@ export default function Home() {
   const [Apis, setApis] = useState(mockData.data);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col font-verdana">
       <Header />
       <NavBar />
       <main className="flex-1 flex justify-center bg-white">
         <section className="flex flex-col items-center w-full max-w-4/5 pb-20">
           <div className="text-black h-1/5 mt-20 w-full">
-            <h1 className="text-[#1A6C7C] text-4xl font-medium">Seleção de APIs</h1>
-            <hr />
-            <p className="mt-10">Selecione a API:</p>
+            <h1 className="text-[#1A6C7C] text-4xl font-medium mb-3">Seleção de APIs</h1>
+            <hr className="border-gray-400"/>
+            <p className="mt-10 text-gray-500">Selecione a API:</p>
           </div>
-          <div className="w-full max-h-[400px] overflow-y-auto border border-gray-400 rounded-md">
+          <div className="w-full max-h-[400px] overflow-y-auto border border-gray-400 rounded-md mt-8 shadow-all-sides">
             <table className="table-auto w-full border-collapse">
               <thead>
                 <tr className="bg-white text-black">

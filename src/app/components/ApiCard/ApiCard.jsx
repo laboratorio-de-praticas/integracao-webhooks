@@ -2,7 +2,7 @@ import React from "react";
 
 export const ApiCard = (props) => {
     return (
-      <tr className= {`${props.bgColor} h-15 text-gray-600`}>
+      <tr className= {`${props.bgColor} h-15 text-gray-600 font-verdana`}>
         <td className="px-10 py-0.5">{props.nome}</td>
         <td className="px-10 py-0.5">{props.desc}</td>
         <td className="px-10 py-0.5">{props.caminho}</td>
