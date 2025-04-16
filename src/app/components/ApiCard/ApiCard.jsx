@@ -15,7 +15,7 @@ export const ApiCard = (props) => {
         <td className="py-0.5">
           <button 
           onClick={handleClick}
-          className="bg-white text-[#B20000] border-2 border-[#B20000] px-8 py-1 rounded-xl font-semibold">
+          className="bg-white text-[#B20000] border-2 border-[#B20000] px-8 py-1 rounded-xl font-semibold cursor-pointer hover:bg-[#B20000] hover:text-white">
             Visualizar Endpoints
           </button>
         </td>

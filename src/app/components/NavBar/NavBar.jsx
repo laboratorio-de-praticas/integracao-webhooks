@@ -9,8 +9,8 @@ export default function NavBar() {
           <Image
             src={Logo_menu}
             alt="CPS"
-            width={320}
-            height={40}
+            width={400}
+            height="auto"
             className="object-contain"
           />
         </div>
