@@ -1,13 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { Header } from "../app/components/Header/Header";
 import { Footer } from "../app/components/Footer/Footer";
 import { NavBar } from "../app/components/NavBar/NavBar";
-import { ApiCard } from "./components/ApiCard/ApiCard";
-import mockData from "./mocks/ApiCards.json";
+import { ApiTable } from "./components/ApiTable/ApiTable";
 
 export default function Home() {
-  const [Apis, setApis] = useState(mockData.data);
 
   return (
     <div className="h-auto flex flex-col font-verdana">
@@ -19,29 +17,7 @@ export default function Home() {
             <p className="mt-10 text-gray-500">Selecione a API:</p>
           </div>
           <div className="w-full max-h-[400px] overflow-y-auto border border-gray-400 rounded-md mt-8 shadow-all-sides mb-30">
-            <table className="table-auto w-full border-collapse">
-              <thead>
-                <tr className="bg-white text-black">
-                  <th className="px-10 py-2 text-left">Nome</th>
-                  <th className="px-10 py-2 text-left">Descrição</th>
-                  <th className="px-10 py-2 text-left">Caminho</th>
-                  <th className="px-10 py-2 text-left"></th>
-                </tr>
-              </thead>
-              <tbody>
-                {Apis.map((api, index) => (
-                  <ApiCard
-                    key={api.id}
-                    id={api.id}
-                    nome={api.nome}
-                    desc={api.desc}
-                    caminho={api.caminho}
-                    bgColor={index % 2 === 0 ? 'bg-gray-100' : 'bg-white'}
-                    fontColor={index % 2 === 0 ? 'text-gray-600' : 'text-gray-500'}
-                  />
-                ))}
-              </tbody>
-            </table>
+            <ApiTable />
           </div>
         </section>
       </main>

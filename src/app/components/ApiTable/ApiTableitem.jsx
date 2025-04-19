@@ -1,12 +1,13 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 
-export const ApiCard = (props) => {
+export const ApiTableItem = (props) => {
   const router = useRouter();
 
   const handleClick = () => {
     router.push(`/api/${props.id}`);
   };
+  
     return (
       <tr className= {`${props.bgColor} h-15 ${props.fontColor} font-verdana`}>
         <td className="px-10 py-0.5">{props.nome}</td>
