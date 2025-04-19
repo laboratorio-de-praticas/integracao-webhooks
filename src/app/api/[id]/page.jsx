@@ -1,8 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Header } from "../../components/Header/Header";
-import { Footer } from "../../components/Footer/Footer";
-import { NavBar } from "../../components/NavBar/NavBar";
 import { ApiEndpointList } from "@/app/components/ApiEndpointList/ApiEndpointList";
 
 export default function ApiDetails({ params }) {

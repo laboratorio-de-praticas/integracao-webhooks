@@ -1,8 +1,5 @@
 "use client";
 import React from "react";
-import { Header } from "../app/components/Header/Header";
-import { Footer } from "../app/components/Footer/Footer";
-import { NavBar } from "../app/components/NavBar/NavBar";
 import { ApiTable } from "./components/ApiTable/ApiTable";
 
 export default function Home() {
