@@ -1,9 +1,8 @@
-import React, { useState } from "react";
 import mockData from "../../mocks/ApiCards.json";
 import { ApiTableItem } from "./ApiTableitem";
 
 export const ApiTable = () => {
-    const [data, setData] = useState(mockData.data);
+    const data = mockData.data;
 
     return (
         <table className="table-auto w-full border-collapse">
