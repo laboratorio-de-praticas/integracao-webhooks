@@ -18,9 +18,9 @@ export default function ApiDetails({ params }) {
     }
 
     return (
-        <div className="min-h-screen flex flex-col font-verdana">
-            <main className="h-auto min-h-[110vh] flex justify-center bg-white pb-30">
-                <section className="flex flex-col items-center w-full max-w-4/5">
+        <div className="h-full flex flex-col">
+            <div className="h-auto min-h-[110vh] flex justify-center bg-white pb-30">
+                <section className="flex flex-col items-center w-full">
                     <div className="text-black h-40 mt-20 w-full">
                         <h1 className="text-[#1A6C7C] text-4xl font-medium mb-3">Manipulação de Enpoints</h1>
                         <hr className="border-gray-400" />
@@ -57,7 +57,7 @@ export default function ApiDetails({ params }) {
                         </form>
                     </div>
                 </section>
-            </main>
+            </div>
         </div>
     );
 }
