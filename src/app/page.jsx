@@ -5,7 +5,6 @@ import { ApiTable } from "./components/ApiTable/ApiTable";
 export default function Home() {
 
   return (
-    <>
     <div className="h-full w-full flex flex-col gap-12 pb-30">
       <div className="text-black h-1/5 mt-20 w-full">
         <h1 className="text-[#1A6C7C] text-4xl font-medium mb-3">Seleção de APIs</h1>
@@ -16,6 +15,5 @@ export default function Home() {
         <ApiTable />
       </div>
       </div>
-    </>
   );
 }
